@@ -1,0 +1,260 @@
+In JavaScript, a string is a sequence of characters used to represent text.
+
+let str1 = "Hello";       // double quotes
+let str2 = 'World';       // single quotes
+let str3 = `Hello World`; // backticks (template literals)
+
+String Properties
+length → gives the number of characters in a string
+let name = "Roidon";
+console.log(name.length); // 6
+
+
+| Method              | Description                    | Example                                                 |
+| ------------------- | ------------------------------ | ------------------------------------------------------- |
+| `toUpperCase()`     | Convert to uppercase           | `"abc".toUpperCase()` → `"ABC"`                         |
+| `toLowerCase()`     | Convert to lowercase           | `"ABC".toLowerCase()` → `"abc"`                         |
+| `charAt(n)`         | Get character at index `n`     | `"Hello".charAt(1)` → `"e"`                             |
+| `includes()`        | Check if substring exists      | `"JavaScript".includes("Script")` → `true`              |
+| `indexOf()`         | Get position of substring      | `"abcabc".indexOf("b")` → `1`                           |
+| `slice(start, end)` | Extract part of a string       | `"Hello".slice(0, 3)` → `"Hel"`                         |
+| `replace(a, b)`     | Replace substring              | `"Hi Roidon".replace("Hi", "Hello")` → `"Hello Roidon"` |
+| `trim()`            | Remove spaces from start & end | `"   hey   ".trim()` → `"hey"`                          |
+| `split()`           | Convert to array               | `"a,b,c".split(",")` → `["a", "b", "c"]`                |
+
+
+
+
+1. How Strings are Stored in JavaScript
+JavaScript stores strings as a sequence of UTF-16 code units.
+
+Each character is represented internally by a numeric value.
+
+For example:
+
+let str = "Hi";
+console.log(str.charCodeAt(0)); // 72  (H)
+console.log(str.charCodeAt(1)); // 105 (i)
+
+
+2. Strings are Immutable
+Immutable means: once a string is created, it cannot be changed in place.
+
+Example:
+
+let str = "Hello";
+str[0] = "J"; // ❌ This won't work
+console.log(str); // "Hello" (unchanged)
+
+Even though it looks like an array (str[0]), trying to change it does nothing.
+When you "change" a string, JavaScript actually creates a new string in memory.
+
+let str = "Hello";
+str = "J" + str.slice(1); // ✅ Create a new string
+console.log(str); // "Jello"
+
+Here, "Jello" is a new string — "Hello" still exists in memory until garbage collected.
+
+3. Why Strings are Immutable
+Performance: Since strings are often reused, immutability helps with caching and memory optimization.
+Security: Prevents accidental or malicious modifications of string literals.
+Consistency: You can safely share the same string value across different parts of the code without worrying about it changing.
+
+
+4. What Happens When You Modify a String
+When you "modify" a string:
+JavaScript allocates new memory for the new value.
+The original string remains untouched.
+Your variable now points to the new string.
+
+let a = "Cat";
+let b = a;     // b points to same string as a
+a = "Dog";     // new string created for a
+console.log(b); // "Cat" (unchanged)
+
+let a = "Cat";
+let b = a;     // b points to same string as a
+a = "Dog";     // new string created for a
+console.log(b); // "Cat" (unchanged)
+
+
+5. Key Takeaways
+Strings in JS are primitive types.
+They are immutable — can’t be changed in place.
+Any "modification" creates a new string.
+Use string methods (slice, replace, concat, etc.) to create new strings when needed.
+
+
+
+📌 Easy Level
+How do you find the length of the string "JavaScript"?
+
+Write a JS program to convert "hello world" to uppercase.
+
+How do you check if "OpenAI" contains "AI"?
+
+Extract the word "Script" from "JavaScript" using slice().
+
+Remove extra spaces from " I love JS ".
+
+📌 Medium Level
+Reverse the string "JavaScript" without using .reverse().
+
+Count the number of vowels in a string.
+
+Check if a given string is a palindrome (same forwards & backwards).
+
+Replace all spaces in "I love JavaScript" with "-".
+
+Split the string "apple,banana,grape" into an array.
+
+📌 Tricky / Theory Level
+Why are strings immutable in JavaScript? Explain with an example.
+
+What is the difference between:
+let a = "Hello";
+let b = new String("Hello");
+
+
+let str = "Hello";
+str[0] = "J";
+console.log(str);
+
+let a = "abc";
+let b = a;
+a = "xyz";
+console.log(a, b);
+
+
+console.log("Hello" == new String("Hello"));
+console.log("Hello" === new String("Hello"));
+
+
+📌 Easy Level
+Reverse a string
+Example: "hello" → "olleh"
+
+Capitalize the first letter of a string.
+Example: "hello world" → "Hello world"
+
+Count occurrences of a character in a string.
+Example: "banana", "a" → 3
+
+Check if string contains only digits.
+Example: "12345" → true, "12a45" → false
+
+Find the longest word in a sentence.
+Example: "I love JavaScript" → "JavaScript"
+
+📌 Medium Level
+Check if two strings are anagrams.
+Example: "listen" & "silent" → true
+
+Remove duplicate characters from a string.
+Example: "programming" → "progamin"
+
+Find the first non-repeating character.
+Example: "swiss" → "w"
+
+Count vowels and consonants.
+Example: "JavaScript" → Vowels: 3, Consonants: 7
+
+Convert a string to title case.
+Example: "hello world from js" → "Hello World From Js"
+
+📌 Advanced / Tricky Level
+Check if a string is a rotation of another.
+Example: "abcde" & "deabc" → true
+
+Find all substrings of a string.
+Example: "abc" → "a", "b", "c", "ab", "bc", "abc"
+
+Find the longest palindrome substring in a string.
+Example: "babad" → "bab" (or "aba")
+
+Compress a string using counts.
+Example: "aaabbc" → "a3b2c1"
+
+Check if string has balanced parentheses.
+Example: "({[]})" → true
+
+1. Reverse Words in a Sentence (Easy)
+Input: "Hello world from JavaScript"
+Output: "JavaScript from world Hello"
+
+2. Check for Anagram (Medium)
+Write a function:
+
+js
+Copy
+Edit
+function isAnagram(str1, str2) { ... }
+Return true if both strings contain the same letters in the same quantity (ignore spaces and case).
+
+Example:
+"Listen", "Silent" → true
+"Hello", "Olelh" → true
+"Test", "Taste" → false
+
+3. First Unique Character (Medium)
+Given a string, find the first character that does not repeat.
+Return "_" if none exists.
+
+Example:
+"swiss" → "w"
+"aabb" → "_"
+
+4. Longest Palindrome Substring (Hard)
+Write a function to find the longest palindromic substring in a given string.
+
+Example:
+"babad" → "bab" (or "aba")
+"cbbd" → "bb"
+
+5. String Compression (Medium/Hard)
+Implement basic string compression:
+
+"aaabbc" → "a3b2c1"
+
+"abcd" → "a1b1c1d1"
+
+If the compressed string is not shorter, return the original string.
+
+Problem Statement
+Given a string, find the length of the longest substring without repeating characters.
+
+Input: "abcabcbb"
+Output: 3   // "abc"
+
+Approach: Sliding Window
+We use two pointers (start and end) to create a moving window over the string:
+
+Move end forward adding characters to a set/map.
+
+If a character repeats, move start forward until there are no repeats.
+
+Track the max length along the way.
+
+function lengthOfLongestSubstring(s) {
+    let set = new Set();
+    let left = 0;
+    let maxLength = 0;
+
+    for (let right = 0; right < s.length; right++) {
+        while (set.has(s[right])) {
+            set.delete(s[left]);
+            left++;
+        }
+        set.add(s[right]);
+        maxLength = Math.max(maxLength, right - left + 1);
+    }
+
+    return maxLength;
+}
+
+console.log(lengthOfLongestSubstring("abcabcbb")); // 3
+console.log(lengthOfLongestSubstring("bbbbb"));    // 1
+console.log(lengthOfLongestSubstring("pwwkew"));   // 3
+
+
+
