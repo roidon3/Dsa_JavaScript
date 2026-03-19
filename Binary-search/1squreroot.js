@@ -12,16 +12,14 @@ function squreRoot(n) {
         if (mid * mid < n) {
             left = mid + 1
             result = mid
-
         } else {
-
             right = mid - 1
         }
     }
     return result
-
 }
 console.log(squreRoot(4));
 console.log(squreRoot(9));
 console.log(squreRoot(20));
 console.log(squreRoot(110));
+//here basically first it'll check the while condition then inside block

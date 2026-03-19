@@ -129,4 +129,9 @@ function mostReap(str) {
 
 }
 console.log(mostReap("swiss"));
-//5.chunks of array
+//9.conver map to obj without using loops
+const map =new Map([
+    ['name','roidon'],['age',26],['place','managlore']
+])
+console.log(Object.fromEntries(map));
+//10.chunks of array
