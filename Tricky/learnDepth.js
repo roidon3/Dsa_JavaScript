@@ -43,5 +43,10 @@
 // }
 // console.log(obj.f());//10
 
-console.log(5&&1);//1
-console.log(5||1);//5
+// console.log(5&&1);//1 whenver we use && between 2 truthy val js will return last truthy val
+// console.log(5||1);//5  whenver we use || between 2 truthy val js will return first truthy val
+
+// let nums=[1,2,3,4,5]
+// delete nums[2]
+// console.log(nums.length);//[ 1, 2, <1 empty item>, 4, 5 ]  length =5 it remains same
+//deletes deletes the ele and fills empty slot
