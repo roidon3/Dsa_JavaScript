@@ -50,41 +50,14 @@ Array.prototype.myFilter = function (callback) {
 // console.log(arr.myFilter((ele) => ele > 2))
 
 //4. reduce() pollyfill
-// Array.prototype.myReduce = function (callback, initialValue) {
-// if (typeof callback !== "function") {
-//   throw new TypeError("undefined is not a function");
-// }
 
-//     }
-//     for (i = 0; i < this.length; i++) {
-//         let ans = callback(initialValue, this[i], i, this)
-//         initialValue = ans
-//     }
-//     return initialValue
-
-// }
-
-Array.prototype.myReduce = function (callback, initialValue) {
-    if (typeof callback !== "function") {
-        throw new TypeError("undefined is not a function");
+Array.prototype.myReduce = function(callback,initialValue){
+    let accumlator = initialValue;
+    for(let i=0;i<this.length;i++){
+        accumlator = accumlator?callback(accumlator,this[i],i,this) :this[i]
     }
-
-    let acc = initialValue;
-    let start = 0;
-    if (arguments.length < 2) {
-        start = 1;
-        acc = this[0]
-
-    }
-    for (i = start; i < this.length; i++) {
-        acc = callback(acc, this[i], i, this)
-    }
-    return acc
-
+    return accumlator
 }
-
-console.log(arr.reduce((acc, currEle) => { return acc + currEle }, 0));
-console.log(arr.myReduce((acc, currEle) => { return acc + currEle }, 0));
 
 //5. every() pollyfill
 Array.prototype.myEvery = function (callback) {

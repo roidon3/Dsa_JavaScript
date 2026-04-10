@@ -12,7 +12,7 @@ console.log(null + 1)//0+1//1
 console.log(undefined + 1)//Nan//undefined → NaN
 console.log(typeof null)// "object"
 console.log(typeof NaN)//console.log(typeof NaN) //Even though it's Not a Number, the type is "number".
-console.log(NaN == NaN)//false //Only way to check: //Number.isNaN(NaN)
+console.log(NaN == NaN)//false //Only way to check: //Number.isNaN(NaN)"5"
 console.log(Number.isNaN(NaN));//true
 console.log([] == ![])//true //![] → false    [] → "" → 0      false → 0   0==0
 console.log(1 < 2 < 3)//true 1 < 2 → true   true → 1       1 < 3 → true
