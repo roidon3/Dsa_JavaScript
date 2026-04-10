@@ -79,7 +79,6 @@ Array.prototype.myEvery = function (callback) {
 // console.log(arr.every((ele) => ele > 0))
 // console.log(arr.myEvery((ele) => ele > 0))
 
-
 //6. some() pollyfill
 Array.prototype.mySome = function (callback) {
     if (!callback) {
