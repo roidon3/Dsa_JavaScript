@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #div{
+        color: blue;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin-bottom: 10px;
+    }
+    #div1{
+        padding: 24px;
+        border: 1px solid red;
+    }
+    #div2{
+        padding: 18px;
+        border: 1px solid blue;
+    }
+    #div3{
+        padding: 5px;
+        border: 1px solid green;
+    }
+</style>
+
+<body>
+    <div id="div">Event propogation</div>
+    <div id="div1">Div 1
+        <div id="div2">Div 2
+            <div id="div3">Div 3</div>
+        </div>
+    </div>
+    <script>
+        //event Bubbling
+        document.querySelector("#div1").addEventListener("click",()=>{console.log("div 1 clicked")})
+        document.querySelector("#div2").addEventListener("click",()=>{console.log("div 2 clicked")})
+        document.querySelector("#div3").addEventListener("click",()=>{console.log("div 3 clicked")})
+
+        //event capturing
+        // document.querySelector("#div1").addEventListener("click",()=>{console.log("div 1 clicked")},true)
+        // document.querySelector("#div2").addEventListener("click",()=>{console.log("div 2 clicked")},true)
+        // document.querySelector("#div3").addEventListener("click",()=>{console.log("div 3 clicked")},true)
+        
+
+        //to stop propogation
+       // document.querySelector("#div1").addEventListener("click",(e)=>{console.log("div 1 clicked"),e.stopPropagation()})
+        //document.querySelector("#div2").addEventListener("click",(e)=>{console.log("div 2 clicked"),e.stopPropagation()})
+        //document.querySelector("#div3").addEventListener("click",(e)=>{console.log("div 3 clicked"),e.stopPropagation()})
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+By default its event bubleing meand from child to parent (div3 to div1) if u give the third parameter as true then its event capturing
+by default its false here its from parent to child 
+to stop this give e.stopEventPropogate()
+-->
+
+
+<!-- Event Delegation in JavaScript
+Event delegation is a technique in JavaScript where you add a single event listener to a parent element to handle events for its child elements.
+ This works by taking advantage of the event bubbling mechanism, where an event triggered on a child element propagates (or "bubbles up")
+  to its parent elements.
+
+Instead of attaching individual event listeners to multiple child elements, event delegation allows you to use just one listener on the parent,
+ reducing memory usage and improving performance.
+
+How Event Delegation Works
+Event Bubbling: When an event occurs on an element, it bubbles up through the DOM tree, triggering the same event on its ancestors.
+Single Listener: By adding the event listener to a parent element, you can check the event.target to determine which child element triggered
+ the event.
+
+
+Example Without Event Delegation -->
+
+<!-- <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+<script>
+    document.querySelectorAll('li').forEach((li) => {
+        li.addEventListener('click', () => {
+            console.log('Item clicked:', li.textContent);
+        });
+    });
+</script> -->
+
+<ul>
+    <li>mango</li>
+    <li>apple</li>
+    <li>orange</li>
+</ul>
+<script>
+document.querySelectorAll("li").forEach((li)=>li.addEventListener("click",()=>console.log("ele clicked",li.textContent)))
+</script>
+
+
+<!-- Example With Event Delegation
+Instead of attaching listeners to each <li>, you attach a single listener to the <ul> parent: -->
+
+    <!-- <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <script>
+        document.getElementById('list').addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                console.log('Item clicked:', event.target.textContent);
+            }
+        });
+    </script> -->
+    
+    <!-- Benefits:
+    Only one listener is attached to the <ul> element.
+    The listener works for all current and future <li> elements added dynamically.
+    Key Points About Event Delegation
+    Use event.target: Identifies the actual element that triggered the event.
+    Use conditions to filter: Ensure the event is only processed for specific child elements
+     (e.g., check event.target.tagName or event.target.classList).
+    Dynamic Elements: Works well for dynamically added elements that don't exist in the DOM initially. -->
+
+    <!-- When to Use Event Delegation
+Dynamic content: Elements are added or removed dynamically.
+Large number of elements: Reduces memory usage and improves performance by minimizing the number of event listeners.
+Nested structures: Useful when dealing with nested or hierarchical elements. -->

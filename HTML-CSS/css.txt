@@ -1,0 +1,315 @@
+1. Display propery in CSS
+The display property in CSS is used to determine how an element is displayed on the page and how it behaves in the layout
+      block:
+        The element behaves like a block element.
+        It starts on a new line and takes up the full width available.
+        ex-div,p
+    inline:
+        The element behaves like an inline element.
+        It does not start on a new line and only takes up as much width as necessary.
+        Examples: <span>, <a> cant apply width,height,cant apply mar,pad top bottom
+
+    inline-block:
+        Behaves like inline, but you can set width and height.
+        Useful for aligning elements side-by-side while maintaining block-like properties.
+
+    flex :
+        Turns the element into a flex container.
+        Enables the use of Flexbox layout properties to align and distribute content.
+
+    grid:
+        Turns the element into a grid container.
+        Enables the use of CSS Grid layout properties for defining rows, columns, and areas.
+
+    none:
+        The element is removed from the document flow and does not occupy any space.
+
+***********************************************************************
+2.Positions in CSS
+
+1. static
+Description: This is the default position for HTML elements. Elements are positioned according to the
+ normal flow of the document (no special positioning applied).
+Characteristics:
+No ability to use top, left, right, or bottom properties.
+
+2. relative -The element remains in the normal document flow.
+Description: The element is positioned relative to its normal position. You can use top, right, bottom,
+ and left to adjust its position without removing it from the normal document flow.
+Characteristics:
+The space for the element remains in its original place.
+
+3. absolute - The element is removed from the normal document flow.
+Description: The element is positioned relative to its nearest positioned ancestor (anything other than static),
+ or if none exists, relative to the initial containing block (usually the html element). It is removed from the normal document flow.
+Characteristics:
+Other elements act as if the absolutely positioned element doesn’t exist.
+
+4. fixed
+Description: The element is positioned relative to the browser window or viewport, and remains fixed in the same spot even
+ when the page is scrolled. It is removed from the normal flow of the document.
+Characteristics:
+Useful for creating sticky headers, footers, or sidebars.
+
+5. sticky
+Description: The element is treated as relative until it reaches a specified point in the page (based on scrolling), then it switches to fixed.
+ It’s great for creating sticky headers or side navigation.
+Characteristics:
+Behaves like relative when in its normal position.
+Sticks to the viewport when the user scrolls past its defined point.
+
+The element toggles between relative and fixed positioning based on the user's scroll.
+It behaves like relative until a defined scroll position is reached, after which it behaves like fixed.
+Requires at least one of top, right, bottom, or left to work.
+
+****************************************************************
+3.Opacity
+The opacity property in CSS specifies the transparency level of an element. 
+It ranges from 0 (completely transparent) to 1 (completely opaque)
+0: Fully transparent, the element is invisible but still occupies space in the layout.
+1: Fully opaque, the element is completely visible.
+Decimal values: Between 0 and 1, specifying the degree of transparency (e.g., 0.5 is 50% transparent).
+
+**********************************************
+4.Z-index
+The z-index property in CSS specifies the stack order of elements.
+ Elements with a higher z-index are displayed in front of elements with a lower z-index.
+
+Key Points About z-index:
+Only Applies to Positioned Elements: For z-index to work, the element must have a position value of relative,
+ absolute, fixed, or sticky (not static).
+Default Value: The default value is auto, which means the stacking order follows the document flow.
+Stacking Context: Elements are grouped into stacking contexts.
+ The z-index of an element only affects its stack order within its stacking context.
+
+ ************************************************************************
+ 5.What is the difference between inline, block, and inline-block elements?
+
+Answer:
+inline: Elements do not start on a new line and only take up as much width as necessary. Examples: <span>, <a>.
+block: Elements start on a new line and take up the full width. Examples: <div>, <p>.
+inline-block: Like inline, but allows setting width and height.
+
+****************************************************
+6.What are pseudo-classes in CSS? Provide examples.
+A pseudo-class in CSS is a keyword added to a selector that specifies a special state of the selected element
+. For example, you can style an element when it's being hovered over, when it's the first child of its parent,
+ or even when a form input is valid.
+
+1.  Dynamic Pseudo-Classes
+These are often used for interactive elements like links or buttons:
+
+:hover: Styles the element when the mouse hovers over it.
+:active: Styles the element when it is being clicked.
+:focus: Styles the element when it gains focus (e.g., when clicked or tabbed to).
+:visited: Styles links that have been visited.
+:link: Styles links that have not been visited.
+
+a:hover {
+    color: red;
+}
+
+2. Structural Pseudo-Classes
+These are used to select elements based on their position in the DOM:
+
+:first-child: Matches an element that is the first child of its parent.
+:last-child: Matches an element that is the last child of its parent.
+:nth-child(n): Matches elements based on their position (n) in their parent.
+:nth-of-type(n): Matches elements based on their type and position.
+:only-child: Matches elements that are the only child of their parent.
+:empty: Matches elements that have no children (including text nodes).
+
+3. Form-Related Pseudo-Classes
+These are used to style form elements based on their state:
+
+:checked: Matches inputs like checkboxes or radio buttons that are checked.
+:disabled: Matches form elements that are disabled.
+:enabled: Matches form elements that are enabled.
+:valid: Matches inputs with valid data.
+:invalid: Matches inputs with invalid data.
+:required: Matches inputs that are required.
+:optional: Matches inputs that are optional.
+
+**************************************************************************************
+7.css selector
+ 1.Universal Selector -* -Matches all elements on the page. padding ,margin =0;
+ 2.Type Selector (Element Selector) - p,div ,span
+ 3. Class Selector
+ 4.id selector
+ 5.group selector
+ 6. Group Selector   h1,h2,h3{color:"red"}
+ 7. Child Selector -Selector: parent > child -
+ ul > li {
+    list-style: none;
+}
+8.Pseudo-Classes
+9.combinators
+  1. Descendant Selector (Space)
+Selects all descendants of an element.
+div p {
+  color: gray;
+}
+ 2.Child Selector (>)
+Selects direct children of an element
+div > p {
+  font-size: 14px;
+}
+3.Adjacent Sibling Selector (+)
+Selects the first sibling immediately following an element.
+h1 + p {
+  margin-top: 10px;
+}
+4.General Sibling Selector (~)
+Selects all siblings following an element.
+h1 ~ p {
+  color: orange;
+}
+
+**************************************************
+8.What is the difference between em and rem in CSS?
+em -Element Multiplier
+Definition: em is relative to the font size of the parent element
+If the parent has a font size of 16px, then 1em equals 16px.
+    .parent {
+      font-size: 16px;
+    }
+
+    .child {
+      font-size: 2em; /* 2 * parent's font size (16px) = 32px */
+    }
+
+rem (Root Element Multiplier)
+Definition: rem is relative to the root element's font size (<html>)
+By default, most browsers set the root font size to 16px (this can be customized using html { font-size: ... }).+
+***************************************************************************************************
+9.Explain the box model in CSS.
+box-sizing defines how the total width and height of an element is calculated.
+boxsizing :"border box" - if u apply this height or width = padd + boreder
+imagine i dont give boxsizing - and width is 200px ,boreder 2px and padd 5px then entire width is 214px
+if i give box sixing and if i give width as 200px boreder 2px and padd 5px then entire width is 200px(width is 176 +4+10)
+
+The default box-sizing behavior in CSS is content-box.
+
+margin collapse - suppose top elememt has mar bootom 1o and botoom ele has mardin 10,so the margin between yhem is 1o not 20
+it'll take the maximum margin
+
+
+chatgpt-
+The CSS Box Model is the foundation of how elements are structured and rendered on a web page. 
+Every HTML element is treated as a rectangular box, and the box model defines the space around it, 
+its dimensions, and its behavior in relation to other elements.
+
+***********************************************
+10.How can you center a div vertically and horizontally?
+.container {
+  display: flex;
+  justify-content: center; /* Horizontal */
+  align-items: center;    /* Vertical */
+  height: 100vh;
+}
+
+******************************************************************
+11.What is the difference between visibility: hidden and display: none?
+
+Answer:
+visibility: hidden: Element is hidden but still occupies space.
+display: none: Element is removed from the document flow and occupies no space.
+
+************************************************************************
+12.How can you optimize CSS for better performance?
+
+Answer:
+Minimize the use of universal selectors (*).
+Combine selectors to reduce redundancy.
+Use shorthand properties where possible.
+Minimize CSS file size using tools like CSS minifiers.
+Load critical CSS inline and defer loading of non-critical CSS.
+
+******************************************************************
+13.What is the difference between visibility: hidden and opacity: 0?
+1. visibility: hidden
+Effect:
+
+Hides the element from view but retains its space in the layout.
+The element is not visible, but its position and dimensions still affect other elements on the page.
+Interactivity:
+
+The element is not clickable and doesn’t respond to any events (e.g., hover, click).
+Use Case:
+
+When you want to hide an element but keep its space reserved in the layout.
+
+opacity: 0
+Effect:
+
+Makes the element completely transparent, but it still occupies space and affects layout just like visibility: hidden.
+The element is still rendered, just not visible.
+Interactivity:
+
+The element is still clickable and responds to events because it is not actually hidden, just invisible.
+Use Case:
+
+When you want to make an element invisible but still allow interaction or use animations for fading in/out.
+
+******************************************************************
+control overflow text
+        white-space: nowrap; /* Prevents text from wrapping */
+        overflow: hidden; /* Optional: Hides overflow text */
+        text-overflow: ellipsis; /* Optional: Adds "..." for overflowing text */
+
+*****************************************
+Grid in css
+  display: grid;
+  grid-template-rows: Specifies the height of rows.
+grid-template-columns: Specifies the width of columns.
+
+.container {
+  display: grid;
+  grid-template-rows: 100px auto 50px; /* 3 rows */
+  grid-template-columns: 200px 1fr;   /* 2 columns */
+}
+
+.container {
+  gap: 10px; /* Adds space between rows and columns */
+}
+
+Placing Items in the Grid
+1. Automatic Placement
+Grid items are placed automatically in rows and columns.
+
+<div class="container">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+
+2. Manual Placement
+You can specify where an item should go using:
+
+grid-row and grid-column: Define the start and end positions.
+.item1 {
+  grid-row: 1 / 2;   /* Row 1 */
+  grid-column: 2 / 4; /* Columns 2 to 3 */
+}
+
+***********************************************************
+css priority -inline,internal,external
+tag- id,class,tag selectors
+
+If you have two CSS classes with the same name but different properties (e.g., colors),
+ the latest defined class in the CSS file (or <style> block) will take precedence due to the CSS cascade rule.
+ *********************************
+ Padding and Margin in CSS
+Padding and Margin are used to control spacing around elements in CSS.
+
+Padding is the space between the element's content and its border.
+
+Margin is the space outside the element's border, separating it from other elements.
+
+margin: 10px;        /* All sides */
+margin: 10px 20px;   /* Top & Bottom: 10px, Left & Right: 20px */
+margin: 10px 15px 20px; /* Top: 10px, Left & Right: 15px, Bottom: 20px */
+margin: 10px 12px 14px 16px; /* Top, Right, Bottom, Left */
+***********************************
+
+

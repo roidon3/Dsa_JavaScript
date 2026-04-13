@@ -1,0 +1,342 @@
+HTML STRUCTURE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    Character encoding is a system that maps characters (letters, numbers, symbols) to a set of numeric values (binary code)
+     that computers can understand and process. Without a specified encoding, browsers might misinterpret certain characters,
+      leading to garbled text on the webpage.
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    Ensures the webpage is responsive by instructing the browser to control the page's dimensions and scaling.
+width=device-width sets the width of the viewport to match the screen size of the user's device.
+initial-scale=1.0 sets the initial zoom level to 1 (100%).
+
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <p></p>
+    </section>
+    
+</body>
+</html>
+
+1.Features of HTML5
+  New Semantic Elements - header,footer,section,article,aside nav,main,<table>, <thead>, <tbody>, <tfoot>, <tr>, <th>, <td>,figure,figurecaption
+
+* newley added tags in HTML5
+* these are elements that clearly define their meaning and role in the structure of a webpage  both for developers and browsers
+*  These tags improve the readability of code and enhance accessibility
+
+
+Semantic tags in HTML are elements that clearly define their meaning and role in the structure of a webpage,
+ both for developers and browsers. These tags improve the readability of code and enhance accessibility,
+ search engine optimization (SEO), and maintainability by providing meaningful context about the content they enclose.
+
+
+Non-Semantic Tags
+Tags like <div> and <span> are considered non-semantic because they don't convey meaning by themselves.
+ They are often used for styling or layout purposes, but they lack intrinsic meaning about the content they contain.
+
+By using semantic tags, you ensure that your HTML code is not only functional but also meaningful and easier to understand 
+for both machines and humans.
+
+  <figure>
+    <img src="https://via.placeholder.com/600x300" alt="A placeholder image">
+    <figcaption>An example image with a descriptive caption.</figcaption>
+  </figure>
+
+  <figure>:
+This tag wraps the image and its caption, treating them as a single, self-contained unit.
+
+<img>:
+Inside the <figure>, the <img> displays the image.
+
+<figcaption>:
+The <figcaption> provides a description or caption for the image. This is particularly useful for accessibility and content clarity.
+
+Multimedia Elements-Audio and vedio
+ New Form Elements and Input Types-New Input Types: email, date, time, url, number, range, color, etc
+ autocomplete: Suggests previous inputs.
+autofocus: Focuses an element on page load.
+required: Makes input fields mandatory.
+pattern: Validates input against a regular expression.
+placeholder: Provides a hint for the expected input.
+6. Local Storage and Session Storage
+
+*******************************************************************************************************************
+2.diffrence between div and span
+Div -
+Purpose : Represents a block-level container for grouping content or elements.
+ Display Behavior:  Creates a block-level element, meaning it starts on a new line and stretches to the full width of its container.
+Usage:Suitable for grouping larger chunks of content or components.
+Often used in combination with CSS classes or IDs for styling or JavaScript manipulation.
+
+Span -
+Purpose -Represents an inline container for text or other inline elements.
+Primarily used for applying styles or adding functionality to specific parts of text.
+Display behaviuor -Creates an inline element, meaning it does not start on a new line and only takes up as much width as its content.
+Usage:Ideal for styling or manipulating a small part of text or an inline element.
+
+When to Use:
+<div>:
+
+When creating larger structural elements or sections.
+For layout purposes with frameworks like CSS Grid or Flexbox.
+Example: Wrapping multiple elements together.
+<span>:
+
+When applying styles or scripting to specific text or inline elements.
+For small pieces of content within a block.
+Example: Highlighting or styling words in a sentence.
+
+Both <div> and <span> are non-semantic, meaning they don’t convey meaning about their content.
+ They’re often used with classes, IDs, or styles to add context or functionality.
+
+ *************************************************************************8
+ 2.section and article - both are block lvl element
+ section - grouping of content within document ,often with a heading
+ Purpose: Used to organize content into logical groups
+ ex:
+ <section>
+  <h2>Features</h2>
+  <p>Our product offers these great features:</p>
+  <ul>
+    <li>Feature 1</li>
+    <li>Feature 2</li>
+  </ul>
+</section>
+
+article-
+<article>
+Definition: Represents independent, self-contained content that can stand alone or be distributed elsewhere.
+Purpose: Used for content like blog posts, news articles, or forum posts.
+Context: Content in an <article> should make sense on its own, even outside of the page.
+Example Usage: A single blog post or news story.
+<article>
+  <h2>Breaking News</h2>
+  <p>A major event has occurred. Read all about it!</p>
+</article>
+
+When to Use:
+<section>: Use it to divide a page into logical sections or group related content.
+<article>: Use it for content that can stand alone, like posts, news, or articles.
+
+ ***********************************************************************
+ 3.diffrence bewtween block and inline element
+
+ The primary difference between block and inline elements in HTML is their display behavior and how they affect the layout of a web page.
+
+Block Elements
+Definition: Block elements occupy the full width of their parent container by default, creating a new line before and after the element.
+Key Features:
+Start on a new line.
+Take up the entire width of their parent container (unless styled otherwise).
+Can contain both block and inline elements.
+Commonly used for structural purposes (e.g., headings, paragraphs, divs).
+Can have width and height set explicitly.
+They can contain other block-level elements or inline elements.
+Examples of Block Elements:
+<div>
+<p>
+<h1> to <h6>
+<section>
+<article>
+<ul>, <ol>, <li>
+<table>
+
+Inline Elements
+Definition: Inline elements do not start on a new line and only take up as much width as necessary.
+Key Features:
+Stay in the flow of text and do not break onto a new line.
+Only take up the width of their content.
+Cannot contain block elements.
+Commonly used for text styling or small portions of content.
+They cannot have width and height explicitly set.
+<span style="display: inline-block; width: 100px; height: 50px; background-color: lightblue;">Inline Block Element</span>//if u want to set width and height change diaplay property
+
+They only occupy the space necessary for the content inside them and allow other elements to sit next to them on the same line.
+Examples of Inline Elements:
+<span>
+<a>
+<strong>, <em>
+<img>
+<label>
+<code>, <abbr>, <cite>
+
+
+ Inline-Block Elements
+Characteristics:
+
+Inline-block elements are similar to inline elements in that they do not cause a line break and can sit next to each other.
+ However, they also behave like block elements in that you can set both the width and height of the element.
+They allow block-level styling, but still allow the element to stay on the same line as other inline elements.
+Common Examples: <img>, <button>, <input>, elements with display: inline-block; applied.
+
+Behavior:
+
+They do not create new lines (like inline elements) but behave like block elements in terms of layout,
+ meaning they can have width, height, margins, and padding applied to them.
+They allow for more control over the layout without breaking the flow of content.
+
+<div style="display: inline-block;">Inline-block element 1</div>
+<div style="display: inline-block;">Inline-block element 2</div>
+
+
+**************************************************************************
+4.
+The difference between <strong> and <b> in HTML lies in their semantic meaning and purpose,
+ even though they often render text in bold by default. Here's a detailed comparison:
+
+<strong>
+Purpose: Semantic element that indicates the content is of strong importance or emphasis.
+Usage: Used to convey that the enclosed text is critical or carries significant meaning.
+Default Rendering: Displays text in bold by default, but the main purpose is semantic, not visual.
+Accessibility: Screen readers may add emphasis to the text (e.g., by changing tone or pitch).
+SEO: Search engines may give more weight to <strong> content because it signals importance.
+Context: The text inside <strong> is emphasized as an important warning.
+
+<p>Warning: <strong>Do not share your password!</strong></p>
+
+<b>
+Purpose: Non-semantic element used purely for visual styling to make text bold.
+Usage: Used when you want to make text bold without conveying additional meaning.
+Default Rendering: Displays text in bold, but has no implied importance or emphasis.
+Accessibility: Screen readers generally ignore <b> as it doesn't provide semantic meaning.
+SEO: Does not affect search engine rankings as it lacks semantic importance.
+Context: The text inside <b> is bolded for styling purposes, without added emphasis or importance.
+
+<p>The brand name is <b>AwesomeTech</b>.</p>
+*******************
+5.action and method ,method- get,put,post.action-When you need to send form data to a specific server endpoint.(in html form)
+**********************
+6.main tagThe <main> tag in HTML is a semantic element introduced in HTML5. 
+It is used to represent the main content of a webpage. 
+This content is the core subject matter of the document and is directly related to the primary purpose of the page.
+
+Semantic Purpose:
+
+The <main> tag helps improve the accessibility and structure of the webpage by clearly indicating the primary content to assistive technologies and search engines.
+Single Occurrence:
+
+There should only be one <main> element per page, as it represents the primary content of the document.
+Excludes Repeated Content:
+
+The <main> tag should not include elements that are repeated across multiple pages, such as:
+Navigation bars (<nav>)
+Sidebars
+Footer (<footer>)
+Header (<header>)
+Improves Accessibility:
+
+Screen readers can quickly skip to the <main> content, making the page easier to navigate for visually impaired users.
+
+***********************************************
+7.Multimedia
+
+
+<audio controls>
+  <source src="audiofile.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+controls: Displays play, pause, and volume controls for the user.
+autoplay: Automatically plays the audio when the page loads.
+loop: Makes the audio loop continuously.
+muted: Starts the audio with the volume muted.
+preload:
+auto: Loads the audio file when the page loads.
+metadata: Loads only metadata (e.g., duration, track size).
+none: No loading until the user interacts with it.
+
+<video controls width="640" height="360">
+  <source src="videofile.mp4" type="video/mp4">
+  Your browser does not support the video element.
+</video>
+
+Key Attributes of <video>
+controls: Displays play, pause, volume, fullscreen, and other controls.
+autoplay: Automatically plays the video when the page loads.
+loop: Makes the video play continuously in a loop.
+muted: Starts the video muted.
+poster: Specifies an image to be displayed while the video is loading or if the user hasn’t started playback.
+width and height: Set the dimensions of the video player.
+
+******************************************
+8.Void elements are HTML elements that do not have closing tags and cannot contain any content between
+ the opening and closing tags because they are self-contained. They are also known as self-closing elements or empty elements.
+ eg-br,hr etc
+
+ Why Are Void Elements Useful?
+Simpler Syntax: They reduce verbosity because they don't require closing tags.
+Specific Functionality: Void elements serve unique purposes that don't require additional content (e.g., <img> for images, <br> for line breaks).
+Performance: Their minimalistic nature contributes to cleaner and faster-rendering HTML.
+*************************************************
+9.<a href="https://www.example.com">Click Here</a>
+target:
+
+Specifies where to open the linked document.
+_blank: Opens the link in a new tab or window.
+_self: Opens the link in the same window (default behavior).
+_parent: Opens the link in the parent frame.
+_top: Opens the link in the full window.
+
+<a href="https://www.example.com" target="_blank">Open in a new tab</a>
+<a href="https://www.example.com" title="Go to Example website">Example</a>//title while u hover
+
+**********************************************
+10.What is the difference between id and class attributes?
+id: Uniquely identifies an HTML element on a page. It should only be used once per page.
+class: Defines a group of elements that can share the same styling. Multiple elements can have the same class.
+
+***********************************************
+11. What is the difference between <ul>, <ol>, and <li> tags?
+Answer:
+
+<ul>: Defines an unordered list (bullet points).
+<ol>: Defines an ordered list (numbered items).
+<li>: Defines a list item, used inside both <ul> and <ol>.
+
+*****************************
+12. What are HTML entities?
+Answer: HTML entities are used to display reserved characters like <, >, and &. They begin with & and end with ;. Examples:
+
+&lt; for <
+&gt; for >
+&amp; for &
+********************************
+13. What is the difference between <script> and <link> tags?
+Answer:
+
+<script>: Used to embed or reference JavaScript code.
+<link>: Used to link external resources, like stylesheets (<link rel="stylesheet" href="style.css">).
+************************************************************************************
+14.How to create a nested webpage in HTML?
+The HTML iframe tag is used to display a nested webpage. In other words, it represents a webpage within a webpage.
+ The HTML iframe tag defines an inline frame. For example:
+  <!DOCTYPE html>    
+  <html>    
+  <body>    
+  <h2>HTML Iframes example</h2>    
+  <p>Use the height and width attributes to specify the size of the iframe:</p>    
+  <iframe src="https://www.javatpoint.com/" height="300" width="400"></iframe>    
+  </body>    
+  </html> 
+  An iframe is used to display a web page within a web page.
+***********************************************
+15. What is the canvas element in HTML5?
+The <canvas> element is a container that is used to draw graphics on the web page using scripting language like JavaScript.
+ It allows for dynamic and scriptable rendering of 2D shapes and bitmap images. There are several methods in canvas to draw paths,
+  boxes, circles, text and add images.
+  *******************************
+ 16.What is SVG?
+  HTML SVG is used to describe the two-dimensional vector and vector/raster graphics. SVG images and their behaviors are
+  defined in XML text files. So as XML files, you can create and edit an SVG image with the text editor.
+  It is mostly used for vector type diagrams like pie charts, 2-Dimensional graphs in an X, Y coordinate system.
+******************************
+17. If I do not put <!DOCTYPE html> will HTML 5 work?
+No, the browser will not be able to identify that it is an HTML document and HTML 5 tags do not function properly..*

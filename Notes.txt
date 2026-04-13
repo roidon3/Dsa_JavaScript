@@ -1,0 +1,296 @@
+                                            Event Loop
+The event loop in JavaScript is a mechanism that handles asynchronous code execution by continuously 
+checking and executing tasks from various queues (like the call stack, microtask queue, and macrotask queue). 
+JavaScript is single-threaded, meaning it can execute one piece of code at a time. However, the event loop allows 
+it to handle asynchronous tasks without blocking the execution of other code.
+
+Components of the Event Loop:
+Call Stack: Where synchronous code is executed. Functions are pushed to the stack when invoked and popped off when they finish.
+Web APIs: These handle asynchronous tasks like timers (setTimeout), HTTP requests (fetch), etc. When these tasks finish,
+ they pass their callbacks to the appropriate queue.
+Microtask Queue: Holds microtasks (e.g., Promises). 
+Microtasks have priority over macrotasks and are processed immediately after the call stack is empty.
+Macrotask Queue: Holds macrotasks (e.g., setTimeout, setInterval, I/O events). These are processed after the microtask queue is empty.
+
+
+
+React is called a Single Page Application (SPA) framework because it enables the creation of web applications that load a single HTML page
+ and dynamically update its content as the user interacts with the app, without requiring a full page reload.
+
+
+
+**************************************************************************************
+
+
+The event loop in JavaScript is a crucial part of how the language handles asynchronous operations. JavaScript is single-threaded, meaning it can execute only one operation at a time. However, using asynchronous mechanisms like callbacks, promises, and async/await, JavaScript can handle tasks without blocking the main thread. This is achieved through the event loop.
+
+Key Concepts:
+Call Stack:
+
+JavaScript executes code on the call stack in a Last In, First Out (LIFO) manner. Each function call adds a frame to the stack, and when the function completes, its frame is removed.
+Web APIs:
+
+When you use asynchronous operations like setTimeout, fetch, or event listeners, these tasks are handed off to browser-provided Web APIs, which operate outside the call stack.
+Callback Queue (Task Queue):
+
+Once the Web API finishes the asynchronous task, the associated callback (like the function in setTimeout) is placed in the callback queue (task queue).
+Event Loop:
+
+The event loop is responsible for checking whether the call stack is empty. If the stack is empty and there are tasks in the callback queue, the event loop will push the oldest task from the queue to the call stack for execution.
+Flow of the Event Loop:
+JavaScript code starts execution and synchronous tasks are executed immediately on the call stack.
+Asynchronous operations are sent to Web APIs (like setTimeout or fetch).
+Once the asynchronous operation completes, the callback is placed in the callback queue.
+The event loop monitors the call stack. If the call stack is empty, the event loop picks up the next task from the callback queue and moves it to the call stack for execution.
+
+
+
+
+
+
+
+
+                                                 callbacks 
+
+In JavaScript, callbacks are functions that are passed as arguments to other functions
+ and are executed after the completion of the original function.
+ They are commonly used in asynchronous operations (like handling events, API calls, or timers)
+  to manage the flow of execution without blocking the main thread.
+
+  function greet(name, callback) {
+  console.log('Hello ' + name);
+  callback();
+}
+
+function sayGoodbye() {
+  console.log('Goodbye!');
+}
+
+greet('John', sayGoodbye);
+
+
+
+function fetchData(callback) {
+  setTimeout(() => {
+    console.log('Data fetched');
+    callback();
+  }, 2000); // Simulates a 2-second delay
+}
+
+function processData() {
+  console.log('Processing data');
+}
+
+fetchData(processData);
+
+
+
+                                              CallBack Hell
+"Callback hell" refers to the deeply nested structure of callbacks, which can lead to 
+unreadable and difficult-to-maintain code. Here’s an example:
+
+Callback Hell Example:
+Imagine you have three asynchronous operations that depend on the result of the previous one 
+(like fetching data from multiple APIs in sequence):
+
+
+function getUser(userId, callback) {
+  setTimeout(() => {
+    console.log('Fetched user data');
+    callback({ userId: userId, name: 'John' });
+  }, 1000);
+}
+
+function getPosts(user, callback) {
+  setTimeout(() => {
+    console.log(`Fetched posts for user ${user.name}`);
+    callback([{ postId: 1, title: 'Post 1' }, { postId: 2, title: 'Post 2' }]);
+  }, 1000);
+}
+
+function getComments(postId, callback) {
+  setTimeout(() => {
+    console.log(`Fetched comments for post ${postId}`);
+    callback([{ commentId: 1, text: 'Nice post!' }, { commentId: 2, text: 'Great read!' }]);
+  }, 1000);
+}
+
+// The nested structure of callbacks:
+getUser(1, (user) => {
+  getPosts(user, (posts) => {
+    getComments(posts[0].postId, (comments) => {
+      console.log('Comments on first post:', comments);
+    });
+  });
+});
+
+**************************************************************************************************************************************
+
+A RESTful API (Representational State Transfer API) in JavaScript refers to an interface that allows communication between
+ a client (like a web browser or mobile app) and a server over HTTP, following REST principles. REST is an architectural 
+ style that defines a set of constraints and principles for creating scalable web services.
+
+ Key Concepts of RESTful API
+Resources:
+
+Everything in a RESTful API is considered a resource, such as users, products, or orders.
+
+Resources are identified using URLs (Uniform Resource Locators). Example: /users, /products/123.
+HTTP Methods:
+
+RESTful APIs use standard HTTP methods to perform operations on resources:
+GET: Retrieve data.
+POST: Create new data.
+PUT: Update existing data.
+PATCH: Partially update existing data.
+DELETE: Remove data.
+Stateless:
+
+Each request from the client to the server must contain all the necessary information. The server does not retain client state between requests.
+JSON Format:
+
+Data is typically exchanged in JSON format, which is lightweight and easy to work with in JavaScript.
+
+
+********************************************************************************************************
+
+
+
+Do you have knowledge of React JS custom component development, give brief description of your experience about it, if you know. 
+Do you have knowledge of component customization,  give brief description of your experience about it, if you know.
+Do you have knowledge of state management,  give brief description of your experience about it, if you know.
+Do you have knowledge of backend API integration,  give brief description of your experience about it, if you know.
+Do you have knowledge of knowledge chart component integration (like chart.js) in react,  give brief description of your experience about it, if you know.
+Do you have knowledge of how React JS app build works,  give brief description of your experience about it, if you know.
+Do you have knowledge of how to integration authentication in React JS app,  give brief description of your experience about it, if you know.
+Do you have knowledge of  how to handle exception and display proper error message to the user,  give brief description of your experience about it, if you know.
+Do you have knowledge of - micro frontend architecture,  give brief description of your experience about it, if you know.
+diff bw find and filter 
+map and for
+
+
+
+forwardRef
+
+
+
+
+
+24. What is code-splitting in React?
+Code-splitting is a technique in React to split your app into smaller bundles and only load the code needed for the current page or component. This improves performance by reducing the initial load time.
+
+You can implement code-splitting using React.lazy and Suspense:
+
+js
+Copy code
+const MyComponent = React.lazy(() => import('./MyComponent'));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MyComponent />
+    </Suspense>
+  );
+}
+
+In JavaScript, variables can be stored in two ways: by value and by reference. Understanding the difference between these two is
+ essential for working with data types like primitives and objects.
+
+1. Store by Value
+When a variable stores by value, it means that the actual value is copied into the variable. If you modify one variable, it does not 
+affect the other.
+
+Primitives (like numbers, strings, booleans, null, undefined, symbol, and bigint) are stored by value.
+
+let x = 10;
+let y = x;  // y gets a copy of x's value
+
+console.log(x);  // 10
+console.log(y);  // 10
+
+y = 20;  // Changing y does not affect x
+console.log(x);  // 10
+console.log(y);  // 20
+
+2. Store by Reference
+When a variable stores by reference, it holds a reference (or memory address) to the actual object in memory.
+ Changing one variable affects the other because they both point to the same object.
+
+Objects (arrays, functions, objects) are stored by reference.
+
+let obj1 = { name: 'Alice' };
+let obj2 = obj1;  // obj2 gets a reference to the same object
+
+console.log(obj1.name);  // Alice
+console.log(obj2.name);  // Alice
+
+obj2.name = 'Bob';  // Changing obj2 affects obj1
+console.log(obj1.name);  // Bob
+console.log(obj2.name);  // Bob
+
+Key Differences:
+Store by Value: A copy of the value is made. Changing one variable doesn’t affect the other.
+Store by Reference: Both variables point to the same memory location. Changing one affects the other.
+Summary:
+Primitives (e.g., numbers, strings) are stored by value.
+Objects (e.g., arrays, functions) are stored by reference.
+
+
+If you want to avoid changing the value in objects (i.e., prevent unintentional mutations), you can use shallow
+ copies or deep copies depending on your requirements. These techniques help you create independent copies of objects 
+ so that changes to the new object don't affect the original one.
+
+1. Shallow Copy
+A shallow copy copies only the top-level properties of an object. However, if the object contains nested objects or arrays,
+ the nested elements are still referenced, meaning that changes to nested objects will affect both the original and the copied object.
+
+Ways to create a shallow copy:
+Using Object.assign():
+
+const original = { name: 'Alice', details: { age: 25 } };
+const shallowCopy = Object.assign({}, original);
+
+// Modifying the shallowCopy won't affect the original for top-level properties
+shallowCopy.name = 'Bob';
+console.log(original.name);  // Alice
+
+// But changes to nested objects will affect both
+shallowCopy.details.age = 30;
+console.log(original.details.age);  // 30 (both change because details is still referenced)
+
+
+if you use memo in your child componenet then if parent componenet renders child component wont rerender
+it'll rerender only if the props value changes
+how to use memo- in export default add export default memo(comp_Name)
+
+
+
+// What is Redux Toolkit and why is it used?
+// How does Redux Toolkit simplify Redux setup compared to the traditional Redux setup?
+// What is the purpose of configureStore in Redux Toolkit?
+// Explain the difference between createSlice and the traditional reducer pattern in Redux.
+// What is createAsyncThunk and how does it help in handling asynchronous actions?
+// How do you define a slice in Redux Toolkit, and what are the key parts of a slice?
+// What is the difference between extraReducers and reducers in a slice?
+// How does Redux Toolkit handle immutability automatically in reducers?
+
+
+// Explain how to use createEntityAdapter in Redux Toolkit.
+// What are the benefits of using Redux Toolkit’s createSlice over manually writing reducers and actions?
+// How would you handle error states or loading states with createAsyncThunk?
+// How do you handle pagination in Redux Toolkit, particularly with createSlice and createAsyncThunk?
+// Can you explain how the reducer and action are automatically generated when using createSlice?
+// What is the purpose of immer in Redux Toolkit, and how does it help with mutation in reducers?
+// What are the different ways you can extend the store using middleware or custom configurations in Redux Toolkit?
+
+// How do you handle optimistic updates in Redux Toolkit?
+// How do you manage nested or deeply nested state in Redux Toolkit?
+// Describe a scenario where you would use createSlice for managing user authentication state.
+// Can you explain how to implement undo/redo functionality in a Redux Toolkit store?
+// How would you structure a Redux Toolkit store in a large-scale application with multiple features and slices?
+
+
+// How do you test reducers and actions created by createSlice?
+// What optimizations does Redux Toolkit provide for performance compared to traditional Redux?
+// How would you handle caching or memoization in Redux Toolkit?
+// What are some ways to avoid unnecessary re-renders in a component connected to Redux?

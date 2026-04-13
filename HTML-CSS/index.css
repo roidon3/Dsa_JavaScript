@@ -1,0 +1,241 @@
+
+.ddd{
+  color: aliceblue;
+  background-color: blue;
+}
+.parent{
+  border: 2px solid red;
+  height: 7700px;
+
+}
+.child{
+  display: inline-block;
+  border: 1px solid blue;
+  height: 50px;
+  width: 50px;
+}
+.c2{
+  background-color: aquamarine;
+  position: sticky;
+  top: 30px;
+}
+.fff{
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 100vh;
+}
+main {
+  padding: 20px;
+  background-color: lightgray;
+}
+
+/* display in css */
+/* inline element will takes only the space which is required ,but bllock level element will take full width */
+
+/* 1. block
+Description: The element takes up the full width of its container, and each block-level element starts on a new line.
+Example: <div>, <p>, <h1> elements have a default block display.
+
+2. inline
+Description: The element does not start on a new line and only takes up as much width as its content. Height and width properties do not apply.
+Example: <span>, <a>, <strong> elements have a default inline display.
+
+3. inline-block
+Description: Behaves like an inline element but allows width and height properties to be applied.
+
+4. flex
+Description: Turns the element into a flex container, enabling flexbox layout for child elements (flex items).
+
+5. grid
+Description: Turns the element into a grid container, enabling grid layout for child elements. */
+
+                                    /* positions in css */
+ /* 1. static
+Description: This is the default position for HTML elements. Elements are positioned according to the
+ normal flow of the document (no special positioning applied).
+Characteristics:
+No ability to use top, left, right, or bottom properties.
+
+2. relative
+Description: The element is positioned relative to its normal position. You can use top, right, bottom,
+ and left to adjust its position without removing it from the normal document flow.
+Characteristics:
+The space for the element remains in its original place.
+
+3. absolute
+Description: The element is positioned relative to its nearest positioned ancestor (anything other than static),
+ or if none exists, relative to the initial containing block (usually the html element). It is removed from the normal document flow.
+Characteristics:
+Other elements act as if the absolutely positioned element doesn’t exist.
+
+4. fixed
+Description: The element is positioned relative to the browser window or viewport, and remains fixed in the same spot even
+ when the page is scrolled. It is removed from the normal flow of the document.
+Characteristics:
+Useful for creating sticky headers, footers, or sidebars.
+
+5. sticky
+Description: The element is treated as relative until it reaches a specified point in the page (based on scrolling), then it switches to fixed.
+ It’s great for creating sticky headers or side navigation.
+Characteristics:
+Behaves like relative when in its normal position.
+Sticks to the viewport when the user scrolls past its defined point. */
+
+
+/* sticky bydefault
+relative-it'll move from its normal position to its relative ,by giving top ,left right etc
+position of the element relative to its normal position and leave a gap at its normal position
+absolute:position of the element relative to the position of its first parent */
+
+/* What is the box-sizing property in CSS?
+Answer: box-sizing defines how the width and height of an element are calculated.
+content-box: Default. The width and height only include the content, not padding or border.
+border-box: The width and height include the content, padding, and border. */
+
+/* 
+What is the box-sizing property in CSS?
+Answer: box-sizing defines how the width and height of an element are calculated.
+content-box: Default. The width and height only include the content, not padding or border.
+border-box: The width and height include the content, padding, and border. */
+
+/* . What are pseudo-elements in CSS?
+Answer: Pseudo-elements are used to style specific parts of an element, such as the first letter or line.
+Examples:
+::before inserts content before an element.
+::after inserts content after an element. */
+
+
+/* 12. What are CSS selectors, and what are the different types?
+Answer: CSS selectors are used to "select" HTML elements for styling. The common types of selectors include:
+Universal selector (*): Selects all elements.
+Type selector (h1, p): Selects elements based on the tag name.
+Class selector (.class-name): Selects elements with a specific class.
+ID selector (#id-name): Selects the element with a specific ID.
+Attribute selector ([type="text"]): Selects elements with a specific attribute.
+Pseudo-class selector (:hover, :focus): Selects elements in a specific state.
+Pseudo-element selector (::before, ::after): Selects part of an element. */
+
+
+/* 18. What is Flexbox, and what are its key properties?
+Answer: Flexbox is a one-dimensional layout model that makes it easier to align and distribute space among items in a container. Key properties for the flex container:
+
+display: flex: Enables Flexbox on the container.
+flex-direction: Defines the direction of the flex items (row, column).
+justify-content: Aligns items horizontally (flex-start, center, space-between).
+align-items: Aligns items vertically (stretch, center, flex-end).
+flex-wrap: Specifies whether items should wrap to the next line (wrap, nowrap).
+Key properties for the flex items:
+
+flex-grow: Specifies how much an item will grow relative to others.
+flex-shrink: Specifies how much an item will shrink relative to others.
+flex-basis: Defines the initial size of a flex item before flex-grow or flex-shrink. */
+
+
+/* 21. What is the difference between em and rem units in CSS?
+Answer:
+em: The unit is relative to the font-size of its parent element. This means its value can change depending on where it is used.
+rem: The unit is relative to the root element (<html>) font-size, making it consistent throughout the document. */
+
+
+
+/* 22. How can you create a circular element in CSS?
+Answer: You can create a circular element by setting equal height and width, then applying a border-radius of 50%.
+css
+Copy code
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+} */
+
+.my-div-for-interview {
+    width: 200px;
+    border: 10px solid;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* flexBox
+display:flex
+flex ditection row or column by default row
+justify-content - by default flex-strat ,flex-end ,center,space-between,evenly distrubte the item,space-around-u'll get space in first and last 
+space-evenly-evenly distrubte all the items
+
+flex-warap:wrap =if there is more content in oneline it'll take new line
+we can use align-contemt only if we use flex-wrap
+and give gap
+flex-grow-grows the item to how much space it has
+ */
+
+/* 
+ Flexbox and Grid are two powerful layout systems in CSS that allow for creating complex, responsive designs more easily.
+  Here's an overview of both:
+
+1. Flexbox (Flexible Box Layout):
+Flexbox is a one-dimensional layout model used for arranging items in a row or column, 
+making it ideal for layouts where you need to align and distribute space among items within a container.
+
+Key Features:
+One-dimensional: Flexbox is focused on either row (horizontal) or column (vertical) layouts.
+Main axis and Cross axis: Flexbox operates with these two axes. The main axis is the direction of the flex container (horizontal or vertical),
+ while the cross axis is perpendicular to it.
+Flexible item sizes: Items can automatically adjust size based on available space, making it great for dynamic or responsive layouts.
+Alignment and distribution: Flexbox makes it easy to align and distribute items using properties like justify-content, align-items, align-self, etc.
+Order: You can change the visual order of elements using the order property without changing the source code structure. */
+
+
+/* 2. Grid (CSS Grid Layout):
+CSS Grid is a two-dimensional layout model, which allows you to control both rows and columns simultaneously, 
+making it ideal for more complex grid-based designs.
+
+Key Features:
+Two-dimensional: Grid can handle layouts in both rows and columns at the same time.
+Explicit and implicit grids: You can define an explicit grid with rows and columns or allow the browser to create an implicit grid.
+Precise control: You can specify exact placement of grid items, spanning them across multiple rows or columns.
+Grid areas: Allows naming grid areas and placing content into them.
+Alignment: Similar to Flexbox, but with more control over both row and column alignment using properties like 
+align-items, justify-items, align-content, and justify-content. */
+
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+  grid-template-rows: auto; /* Rows will adjust height automatically */
+  gap: 10px; /* Space between grid items */
+}
+
+.item {
+  grid-column: span 2; /* Span this item across 2 columns */
+}
+/* When to Use Flexbox vs Grid:
+Flexbox is great for simpler, one-dimensional layouts where you need to align and space items along one axis, like navigation bars or toolbars.
+Grid is better for more complex, two-dimensional layouts where you need to arrange items in both rows and columns,
+ like a photo gallery or a webpage layout with multiple sections.
+Both Flexbox and Grid can be used together for building more flexible and responsive designs. */
+
+
+.parent{
+  background-color: red;
+  width: 80px;
+  height: 80px;
+  position: relative;
+
+
+  /* align-items: center; */
+}
+.child{
+  background-color: aquamarine;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+
+
+  /* margin: auto; */
+}
+
+
