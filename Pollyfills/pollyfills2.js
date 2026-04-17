@@ -13,30 +13,57 @@ greet.call(user); // Roidon
 // Remove it → delete context.fn
 // 👉 Trick: Functions behave differently when attached to objects → this changes
 
-
-
 Function.prototype.myCall = function (context, ...args) {
-  context.fn = this;   // attach function to object   this refres to function greet
-  context.fn(...args); // call it
-  delete context.fn;   // clean up
-};
-
-
-Function.prototype.myApply = function (context, args = []) {
+  // context is the object you want to bind as this.
+  // Step 1: handle null/undefined
   context = context || globalThis;
+  // 👉 globalThis is a standard way to access the global object in JavaScript, no matter where your code is running.
 
-  context.fn = this;
-  const result = context.fn(...args);
-  delete context.fn;
+  // Step 2: attach function to object
+  const fnSymbol = Symbol();
+//   You create a unique property key using Symbol.
+// This avoids overwriting any existing property on context.
+  context[fnSymbol] = this;
+
+  // Step 3: call function
+  const result = context[fnSymbol](...args);
+
+  // Step 4: cleanup
+  delete context[fnSymbol];
 
   return result;
 };
 
 
-Function.prototype.myBind = function (context, ...args) {
-  const originalFn = this;
+Function.prototype.myApply = function (context, args) {
+  context = context || globalThis;
 
-  return function (...newArgs) {
-    return originalFn.apply(context, [...args, ...newArgs]);
+  const fnSymbol = Symbol();
+  context[fnSymbol] = this;
+
+  const result = context[fnSymbol](...(args || []));
+
+  delete context[fnSymbol];
+
+  return result;
+};
+
+
+Function.prototype.myBind = function (context, ...args1) {
+  const fn = this;
+
+  return function (...args2) {
+    return fn.apply(context, [...args1, ...args2]);
   };
 };
+
+
+
+Function.prototype.myCall=function(context,...args){
+  context =contex||globalThis;
+  const fnSymbol=Symbol();
+  context[fnSymbol]=this;
+  const result=context[fnSymbol](...args)
+  delete context[fnSymbol]
+  return result;
+}

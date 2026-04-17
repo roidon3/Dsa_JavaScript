@@ -20,6 +20,9 @@ let p3 = new Promise((res, rej) => {
 
 Promise.myAll = function (promises) {
     return new Promise((res, rej) => {
+        if (!Array.isArray(promises)) {
+            return reject(new TypeError("Argument must be an array"));
+        }
         let result = []
         let completedPromise = 0;
         if (promises.length === 0) {
@@ -45,6 +48,9 @@ Promise.myAll = function (promises) {
 
 Promise.myAllSettled = function (promises) {
     return new Promise((res, rej) => {
+        if (!Array.isArray(promises)) {
+            return reject(new TypeError("Argument must be an array"));
+        }
         let result = []
         let completedPromise = 0;
         if (promises.length === 0) {
@@ -137,6 +143,6 @@ Array.prototype.myFlat = function (depth = 1) {
     return result
 
 }
-let arr1 = [1, 2, [3,[ 4]], 5]
+let arr1 = [1, 2, [3, [4]], 5]
 console.log(arr1.flat(2), "org flat");
 console.log(arr1.myFlat(2), "my flat");

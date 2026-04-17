@@ -20,3 +20,20 @@ oneFun()
 oneFun()
 oneFun()
 oneFun()
+
+
+
+//example 2 this is easy
+let hasRun = false;
+
+function runOnce() {
+  if (hasRun) return;
+
+  console.log("Runs only once");
+  hasRun = true;
+}
+
+runOnce()
+runOnce()
+runOnce()
+runOnce()

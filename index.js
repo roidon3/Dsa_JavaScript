@@ -1,21 +1,36 @@
-function squareRoot(num) {
-    if (num < 2) return num
-    let l = 1;
-    let r = num;
-    let result = 0
-    while (l <= r) {
-        let mid = Math.floor((l + r) / 2)
-        if (mid * mid == num) return mid
-        if (mid * mid < num) {
-            l = mid + 1
-            result = mid
-        } else {
+let p1 = new Promise((res, rej) => {
+    res(21)
+})
 
-            r = mid - 1
+let p2 = new Promise((res, rej) => {
+    res(87)
+})
+
+let p3 = new Promise((res, rej) => {
+    res(76)
+})
+
+
+Promise.myAll=function(promises){
+    return new Promise((res,rej)=>{
+        let result =[]
+        let completedPromise =0;
+        if(promises.length ===0){
+            res(result)
+            return
         }
-    }
-    return result;
+        promises.forEach((item,index)=>{
+            Promise.resolve(item).then((val)=>{
+                result[index]=val;
+                completedPromise+=1
+                if(completedPromise ===promises.length){
+                    res(result)
+                }
+
+            }).catch(err=>rej(err))
+        })
+    })
 }
-console.log(squareRoot(4));
-console.log(squareRoot(1));
-console.log(squareRoot(20));
+
+Promise.all([p1,p2,p3]).then((val)=>console.log(val,"resolved promise")).catch(err=>console.log(err))
+Promise.myAll([p1,p2,p3]).then((val)=>console.log(val,"resolved promise")).catch(err=>console.log(err))

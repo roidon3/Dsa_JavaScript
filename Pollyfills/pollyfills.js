@@ -11,6 +11,7 @@ Array.prototype.myForEach = function (callback) {
     }
 };
 
+
 // console.log(arr.forEach(x => console.log(x)));
 // console.log(arr.myForEach(x => console.log(x)));
 
@@ -52,6 +53,9 @@ Array.prototype.myFilter = function (callback) {
 //4. reduce() pollyfill
 
 Array.prototype.myReduce = function(callback,initialValue){
+      if (!callback) {
+        throw Error("undefined is not a function")
+    }
     let accumlator = initialValue;
     for(let i=0;i<this.length;i++){
         accumlator = accumlator?callback(accumlator,this[i],i,this) :this[i]
