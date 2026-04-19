@@ -7,13 +7,22 @@ function majorityEle(nums) {
             canditate = num;
         }
         count += (num === canditate) ? 1 : -1
-
     }
     return canditate
-
 }
 // console.log(majorityEle([1, 2, 3, 2, 2]));
 
+
+const arr = [1, 2, 3, 4, 5]
+//remove 4
+// console.log(arr.filter(ele=>ele !==4))
+
+const numbers = [1, 2, 3, 4, 5];
+const index = numbers.indexOf(3);
+if (index !== -1) {
+    numbers.splice(index, 1); // Removes the element at index
+}
+// console.log(numbers); // [1, 2, 4, 5]
 
 //add propty to obj
 let obj = [{ name: "roidon", age: 25 }, { name: "maxwell", age: 33 }]
@@ -47,24 +56,6 @@ let groupedByCity = people.reduce((acc, person) => {
 
 // console.log(groupedByCity);
 
-const arr = [1, 2, 3, 4, 5]
-//remove 4
-// console.log(arr.filter(ele=>ele !==4))
-
-const numbers = [1, 2, 3, 4, 5];
-const index = numbers.indexOf(3);
-if (index !== -1) {
-    numbers.splice(index, 1); // Removes the element at index
-}
-// console.log(numbers); // [1, 2, 4, 5]
-//Find the Most Frequent Element in an Array
-// Find the First Duplicate in an Array
-
-// What is the difference between Object.freeze() and Object.seal()?
-// Object.freeze(obj): Prevents adding, modifying, and deleting properties.
-// Object.seal(obj): Prevents adding or deleting properties but allows modifying existing ones.
-
-
 //here find the sum of categoery a and b
 const data = [
     { category: 'a', amount: 100 },
@@ -72,14 +63,15 @@ const data = [
     { category: 'a', amount: 50 },
     { category: 'b', amount: 150 }
 ];
-// const result=data.reduce((acc,curr)=>{
-//     if(acc[curr.category]){
-//         acc[curr.category] =acc[curr.category] +curr.amount
-//     }else{
-//          acc[curr.category] = curr.amount
+
+// const result = data.reduce((acc, curr) => {
+//     if (!acc[curr.category]) {
+//         acc[curr.category] = curr.amount
+//     } else {
+//         acc[curr.category] = acc[curr.category] + curr.amount
 //     }
 //     return acc
-// },{})
+// }, {})
 
 
 // const result = data.reduce((acc, curr) => {
@@ -162,3 +154,90 @@ const result=arrr.reduce((acc,curr)=>{
     return acc
 },{})
 console.log(result);
+
+// input => const employees = [
+//     { name: 'Alice', role: 'Software Engineer' },
+//     { name: 'Bob', role: 'Designer' },
+//     { name: 'Charlie', role: 'Software Engineer' },
+//     { name: 'David', role: 'Product Manager' },
+//   ];
+
+// output => {
+//  Designer: 1
+//  Product Manager: 1
+//  Software Engineer: 2
+// }
+
+const employees = [
+    { name: 'Alice', role: 'Software Engineer' },
+    { name: 'Bob', role: 'Designer' },
+    { name: 'Charlie', role: 'Software Engineer' },
+    { name: 'David', role: 'Product Manager' },
+];
+
+let employeeCount = employees?.reduce((acc, item) => {
+    if (!acc[item.role]) {
+        acc[item.role] = []
+    }
+    acc[item.role].push(item)
+
+
+    //  acc[item.role] = acc[item.role] ? acc[item.role] + 1 : 1;
+    // acc[item.role] = (acc[item.role] ||0)+ 1;
+
+    return acc
+
+}, {})
+//   console.log(employeeCount,"employeeCount");
+
+
+
+//More questions om map reduce filter
+const students = [
+    { name: "roidon", rollNo: 31, marks: 80 },
+    { name: "reyan", rollNo: 15, marks: 69 },
+    { name: "maxwell", rollNo: 16, marks: 35 },
+    { name: "virat", rollNo: 7, marks: 55 },
+]
+
+//question 1 return all students name in capital letters
+
+const capitalName = students?.map((ele) => ele.name.toUpperCase())
+// console.log(capitalName,"capitalName")
+
+//question 2 return only those students name who scored more than 60
+const moreThan60 = students?.filter((ele) => ele.marks > 60).map((ele) => ele.name)
+// console.log(moreThan60,"moreThan60")
+
+//question 3 return marks more than 60 and roll no greater thann20
+const marksAndRoll = students?.filter((ele) => ele.marks > 60 && ele.rollNo > 20).map((ele) => ele.name)
+// console.log(marksAndRoll,"marksAndRoll")
+
+//question 4 sum of marks of all students
+const totalMarks = students?.reduce((acc, curr) => acc + curr.marks, 0)
+// console.log(totalMarks,"totalMarks")
+
+//question 5 return total marks of students whose marks greter than 60 after adding 20 for 
+// those students with less than 60 marks
+
+const addMarks = students.map((ele) => {
+    if (ele.marks < 60) {
+        ele.marks += 20
+    }
+    return students
+})
+
+// console.log(students,"students")
+
+
+function rotateArray(arr, k) {
+    k = k % arr.length;
+    return [...arr.slice(-k), ...arr.slice(0, -k)];
+}
+
+//check 2 arrays are equal
+function arraysEqual(arr1, arr2) {
+    return JSON.stringify(arr1) === JSON.stringify(arr2);
+}
+// console.log(arraysEqual([1, 2, 3], [1, 2, 3])); // true
+// console.log(arraysEqual([1, 2, 3], [1, 2, 4])); // false

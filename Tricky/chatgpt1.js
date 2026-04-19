@@ -34,3 +34,7 @@ console.log(undefined === undefined)  // true;
 // [] == false    // true 
 // [1] == true    // true  //true → 1
 // [1] === 1   // false ❌
+
+/ console.log("2" * "2"); // ? 4
+// console.log("10" - 5); // ? 5
+// console.log(10/"2") //NAN "10"/2

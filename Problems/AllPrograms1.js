@@ -37,8 +37,6 @@ function largestElement(arr){
         }
     }
     return largest
-
-
 }
 // console.log(largestElement([1,2,3,4,5]));
 
@@ -122,6 +120,7 @@ function reverseArray2(){
 //remove duplicated using filter 
 function removeDuplicates(arr) {
     return arr.filter((item, index) => arr.indexOf(item) === index);
+    //index of gives the first element index we are comapring whether its eaual to the actual index
     //its check whether index is already present for that particular no
   }
 // console.log(removeDuplicates([1,2,3,4,4,5,2,1]),"jjjjjjjjj");
@@ -315,7 +314,6 @@ const twoSum = () => {
         if (map.has(competency)) {
             // return [map.get(competency), i] // returns index
             return [competency,arr[i]]//returns ele
-
         }
         map.set(arr[i],i)
     }
@@ -455,42 +453,6 @@ function haveDistinctElements(arr1, arr2) {
 //   console.log(haveDistinctElements([1, 2, 3], [4, 5, 6]));  // Output: true (no common elements)
 //   console.log(haveDistinctElements([1, 2, 3], [3, 4, 5])); 
 
-
-
-// least no of coins req
-
-// Polyfill for Array.prototype.includes
-if (!Array.prototype.includes) {
-    Array.prototype.includes = function (valueToFind, fromIndex) {
-      // Ensure 'this' is not null or undefined
-      if (this == null) {
-        throw new TypeError('"this" is null or not defined');
-      }
-  
-      // Convert 'this' to an object and get its length
-      const o = Object(this);
-      const len = o.length >>> 0; // Convert length to an unsigned 32-bit integer
-  
-      if (len === 0) {
-        return false; // If array is empty, return false
-      }
-  
-      // Determine the starting index
-      const n = fromIndex | 0; // Default is 0 if not provided
-      let k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
-  
-      // Iterate through the array
-      while (k < len) {
-        // Check if the value matches (handles NaN case too)
-        if (o[k] === valueToFind || (valueToFind !== valueToFind && o[k] !== o[k])) {
-          return true;
-        }
-        k++;
-      }
-  
-      return false; // Value not found
-    };
-  }
   
   // Example Usage
   const fruits = ['apple', 'banana', 'mango'];

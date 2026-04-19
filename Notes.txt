@@ -10,7 +10,7 @@ Web APIs: These handle asynchronous tasks like timers (setTimeout), HTTP request
  they pass their callbacks to the appropriate queue.
 Microtask Queue: Holds microtasks (e.g., Promises). 
 Microtasks have priority over macrotasks and are processed immediately after the call stack is empty.
-Macrotask Queue: Holds macrotasks (e.g., setTimeout, setInterval, I/O events). These are processed after the microtask queue is empty.
+Macrotask Queue or callback queue Holds macrotasks (e.g., setTimeout, setInterval, I/O events). These are processed after the microtask queue is empty.
 
 
 
