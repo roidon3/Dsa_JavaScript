@@ -41,7 +41,6 @@ function findele(arr, search) {
 
 // console.log(findele([1,2,3,4,5],9));
 
-
 //count digit
 
 function countDigit(num) {
@@ -51,8 +50,7 @@ function countDigit(num) {
         count++
 
     }
-    return count;
-
+    return count
 }
 // console.log(countDigit(12345));
 
@@ -79,8 +77,6 @@ function removeEle() {
         }
     }
     return duparr
-
-
 }
 // console.log(removeEle());
 
@@ -93,17 +89,13 @@ function buySellStocks(arr){
         }
         else{
             maxNo=Math.max(maxNo,leastNo-arr[i])
-        
-            
         }
 
     }
     return maxNo
-
 }
 
 // console.log(buySellStocks([3,1,4,5,6,7,2,3]));
-
 
 function recur(n){
     if(n==0)return;
@@ -121,12 +113,9 @@ function recur2(n) {
 
 // recur2(5);
 
-
 function sumOfNum(n){
     let sum =(n*(n+1))/2
     return sum
 
 }
-
-
 // console.log(sumOfNum(3));
