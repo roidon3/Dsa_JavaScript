@@ -47,8 +47,29 @@
 
 let obj ={age:24};
 let {age:userAge}=obj;//here this age will get the value from above age 
-console.log(age);//ref error  beacuse u dont have a property called age its renamed as userAge
+// console.log(age);//ref error  beacuse u dont have a property called age its renamed as userAge
 // console.log(userAge);//24
 
+//diff between pop and shift both will remove the element and return that ele shift first ele pop last ele
 
-//done till 131
+let {length}="sai"
+//console.log(length)//3
+
+let a=[1,2]
+let b=a;//both will point to same memory location
+b.push(4)
+// console.log(a);//[1,2,4]
+
+const name="roidon";
+age=21;//this will add to global obj
+// console.log(delete name);//false
+// console.log(delete age);//true
+//delete opertor is used to delete a properties from an obj ,it wont have any effcet on variable declared by var,let const
+
+
+const arrfun =()=>{
+    // console.log(this.count);
+}
+console.log(arrfun());//undefined beacuse arr fun dont have thier own this since there is not count in window obj its undefined
+
+//donr till 140 next change c to R infosys
