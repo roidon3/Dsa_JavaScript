@@ -70,6 +70,19 @@ age=21;//this will add to global obj
 const arrfun =()=>{
     // console.log(this.count);
 }
-console.log(arrfun());//undefined beacuse arr fun dont have thier own this since there is not count in window obj its undefined
+// console.log(arrfun());//undefined beacuse arr fun dont have thier own this since there is not count in window obj its undefined
 
-//donr till 140 next change c to R infosys
+let str = "change";
+str = str.replace("c", "r");
+// Here, you’re assigning the new string back to str, which is why it looks like it changed.
+// console.log(str);//rhange
+// strings are immutable
+// let str = "change";
+// str.replace("c", "r");
+
+// console.log(str); // still "change"
+
+// const str="abc"+ +"def"
+// console.log(str);//"abcNaN"
+
+//donr till 143 next capghemini

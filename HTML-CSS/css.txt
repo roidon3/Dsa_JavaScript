@@ -311,5 +311,15 @@ margin: 10px 20px;   /* Top & Bottom: 10px, Left & Right: 20px */
 margin: 10px 15px 20px; /* Top: 10px, Left & Right: 15px, Bottom: 20px */
 margin: 10px 12px 14px 16px; /* Top, Right, Bottom, Left */
 ***********************************
+Diff between Padding  and margin
+[ margin ]  ← outer space (outside the box)
+  [ border ]
+    [ padding ]  ← inner space (inside the box)
+      [ content ]
 
+Padding is the space between the content and the border.
+This pushes the content away from the edges of the box.
+
+Margin is the space outside the element, between it and other elements.
+This pushes the element away from other elements.
 
