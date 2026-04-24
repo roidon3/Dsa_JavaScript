@@ -85,4 +85,17 @@ str = str.replace("c", "r");
 // const str="abc"+ +"def"
 // console.log(str);//"abcNaN"
 
-//donr till 143 next capghemini
+var arrA=[1,2];
+var arrB=arrA.slice();
+arrB[0]=42;
+// console.log(arrA)[1,2]
+
+var objA={prop1:42};
+var obj2=objA;
+obj2={};
+// console.log(objA);op ={prop1:42}//whenver we try to reassign it'll refer to new location in memory so it's totally independent
+
+let str="roidon";
+let str2=str;
+str2="dsouza"
+// console.log(str);//strings re primmitive ds ,they are copied by value so it wont change op is roidon
