@@ -4,8 +4,6 @@
 // Explanation: Since x is a string and the + operator is used, JavaScript performs string concatenation. 
 // The number 3 is converted to a string and concatenated with "5", resulting in "53".
 
-
-
 // let a = "6";
 // let b = 2;
 // console.log((+a) - b);
@@ -21,8 +19,6 @@
 
 // Explanation: The * operator performs numeric multiplication.
 //  JavaScript converts the string "7" to the number 7 and multiplies it by 4, resulting in 28.
-
-
 
 // let m = "9";
 // let n = "2";
@@ -40,17 +36,12 @@
 
 // Explanation: Number(str) converts the string "20" to the number 20. Then the expression becomes 10 + 20 + 5, which equals 35.
 
-
 // let c = "10px";
 // let d = 5;
-// console.log(parseInt(c) + d);
-// Output: 15
+// console.log(parseInt(c) + d); Output: 15
 
 // Explanation: parseInt(c) extracts the numeric part from the string "10px",
 //  which results in 10. Then, 10 + 5 is evaluated, giving 15.
-
-
-
 
 // let x = "2";
 // let y = "3";
@@ -61,7 +52,6 @@
 //  Then 2 - 3 is evaluated, resulting in -1.
 
 
-
 // console.log(2 * null)//0
 // null is treated as 0 in numeric contexts in JavaScript.
 // When you multiply 2 by null, it's effectively 2 * 0, which equals 0.
@@ -70,10 +60,7 @@
 
 
 // 2. What is the output of console.log(5 - "3")?
-// Answer:
-
-// Copy code
-// 2
+// Answer: 2
 // Explanation: The - operator performs numeric subtraction. The string "3" is coerced into the number 3, resulting in 5 - 3 = 2.
 
 
@@ -83,48 +70,34 @@
 
 
 // What is the output of console.log(0 == false)?
-// Answer:
-
-// true
+// Answer: true
 // Explanation: The == operator performs type coercion. 0 is considered equal to false in this context.
 
 
 // 5. What is the output of console.log(undefined == null)?
-// Answer:
-// true
+// Answer: true
 // Explanation: In JavaScript, undefined and null are loosely equal (==), so the output is true.
 
-// 6. What is the output of console.log([] == false)?
-// Answer:
-
-// true
+// 6. What is the output of console.log([] == false)? this will be 0==0
+// Answer: true
 // Explanation: An empty array is coerced to an empty string (""), which is then coerced to 0 in a numeric context. 
 // Since 0 is loosely equal to false, the output is true.
 
 // 7. What is the output of console.log([] + {})?
-// Answer:
-
-// "[object Object]"
+// Answer: "[object Object]"
 // Explanation: An empty array is coerced into an empty string (""), and an empty object is coerced into the string "[object Object]".
 //  Thus, the result is "" + "[object Object]", which gives "[object Object]".
 
 // 8. What is the output of console.log("5" - 2)?
-// Answer:
-
-// Copy code
-// 3
+// Answer: 3
 // Explanation: The - operator triggers numeric conversion, converting "5" to the number 5, resulting in 5 - 2 = 3.
 
 // 9. What is the output of console.log(2 == "2")?
-// Answer:
-// true
+// Answer: true
 // Explanation: The == operator performs type coercion, so the string "2" is converted to the number 2, resulting in 2 == 2.
 
 // 10. What is the output of console.log(null + 1)?
-// Answer:
-
-// Copy code
-// 1
+// Answer: 1
 // Explanation: null is coerced to 0 in numeric contexts, so the operation is 0 + 1, resulting in 1
 
 // typeof null
@@ -205,17 +178,10 @@
 // Use ?? when you want to return a default value only if the variable is null or undefined.
 // Use || when you want to return a default value if the variable is any "falsy" value (such as 0, false, null, undefined, NaN, or "").
 
-
-
-
-
 // You said:
 // for (var i = 0; i <= 5; i++) {
- 
 //     setTimeout(() => {
- 
 //         console.log(i); // Output
- 
 //     }, 1000);
  
 // }
@@ -651,39 +617,8 @@
 
 
 
-// Object.freeze() in JavaScript
-// Object.freeze(obj) prevents modifications to an object. This means:
-
-// You cannot add, delete, or change properties.
-// The object becomes immutable, but only at the top level (shallow freeze).
 
 
-// const obj = { name: "Alice", age: 25 };
-
-// Object.freeze(obj);
-
-// obj.age = 30; // ❌ Does nothing (silent fail in non-strict mode)
-// delete obj.name; // ❌ Cannot delete property
-// obj.city = "New York"; // ❌ Cannot add new properties
-
-// console.log(obj); // { name: "Alice", age: 25 }
-
-
-// const obj = { name: "Alice", age: 25 };
-
-// Object.freeze(obj);
-
-// obj.age = 30; // ❌ Does nothing (silent fail in non-strict mode)
-// delete obj.name; // ❌ Cannot delete property
-// obj.city = "New York"; // ❌ Cannot add new properties
-
-// console.log(obj); // { name: "Alice", age: 25 }
-
-// function deepFreeze(obj){
-//     let keys=Object.keys(obj);
-//     for(let key of keys){
-//         if(typeof obj[key]==="object" && obj[key]!==null){
-//             deepFreeze(obj[key])
 //         }
 //     }
 //     return Object.freeze(obj)

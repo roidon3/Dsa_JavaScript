@@ -86,3 +86,22 @@
 
 // console.log(typeof typeof 1);//string typeof 1 is number typeof "" is string
 
+//remove duplicate without using inBuilt fun
+function removeDuplicate(arr){
+    let result=[]
+    for(let i=0;i<arr.length;i++){
+      let isSeen=true;
+      for(let j=0;j<result.length;j++){
+          if(arr[i]==result[j]){
+              isSeen=false;
+              break
+          }
+      }
+         if(isSeen){
+              result.push(arr[i])
+          }
+    }
+    return result;
+    
+}
+// console.log(removeDuplicate([1,2,3,3,4,5,5]))

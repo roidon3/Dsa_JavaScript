@@ -68,3 +68,6 @@ function maxSubArray(arr) {
     }
     return maxSum;
 }
+//  Find first repeating character (e.g., "success" → "c")
+//   Inline 5 divs in a row without flex/margin/padding (Hint: display: inline-block)
+//cenrer a div

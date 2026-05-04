@@ -19,7 +19,7 @@ console.log(1 < 2 < 3)//true 1 < 2 → true   true → 1       1 < 3 → true
 console.log(3 > 2 > 1) //false  3 > 2 → true    true → 1       1 > 1 → false
 console.log("10" - "5") //5 //Because - forces number conversion.
 console.log("10" + "5") //"105" //Because + does string concatenation.
-console.log({} + {})//Nan // +{} → NaN       +{} → NaN      NaN + NaN → NaN
+console.log({} + {})//"[object Object][object Object]"
 console.log("b" + "a" + +"a" + "a") // "baNaNa"//+"a" → NaN // "b" + "a" + NaN + "a" // "baNaNa"
 console.log(null == 0) //false //Different coercion rules for comparison vs equality.
 console.log(null >= 0) //true//Different coercion rules for comparison vs equality.
