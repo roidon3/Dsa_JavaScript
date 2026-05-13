@@ -62,6 +62,37 @@ Array.prototype.myReduce = function(callback,initialValue){
     }
     return accumlator
 }
+Array.prototype.myReduce = function (callback, initialValue) {
+  // Check if callback is a function
+  if (typeof callback !== "function") {
+    throw new TypeError(callback + " is not a function");
+  }
+  const arr = this;
+  // Handle empty array with no initial value
+  if (arr.length === 0 && initialValue === undefined) {
+    throw new TypeError("Reduce of empty array with no initial value");
+  }
+
+  let accumulator;
+  let startIndex;
+
+  // If initial value is provided
+  if (initialValue !== undefined) {
+    accumulator = initialValue;
+    startIndex = 0;
+  } else {
+    // Use first array element as accumulator
+    accumulator = arr[0];
+    startIndex = 1;
+  }
+
+  // Loop through array
+  for (let i = startIndex; i < arr.length; i++) {
+    accumulator = callback(accumulator, arr[i], i, arr);
+  }
+
+  return accumulator;
+};
 
 //5. every() pollyfill
 Array.prototype.myEvery = function (callback) {

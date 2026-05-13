@@ -21,7 +21,7 @@ let p3 = new Promise((res, rej) => {
 Promise.myAll = function (promises) {
     return new Promise((res, rej) => {
         if (!Array.isArray(promises)) {
-            return reject(new TypeError("Argument must be an array"));
+            return rej(new TypeError("Argument must be an array"));
         }
         let result = []
         let completedPromise = 0;
