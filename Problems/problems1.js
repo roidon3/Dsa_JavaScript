@@ -135,3 +135,45 @@ const map =new Map([
 ])
 console.log(Object.fromEntries(map));
 //10.chunks of array
+
+// 1. Generate Parentheses
+// Generate valid parentheses.
+// Example:
+// n = 3
+// Output:
+// ["((()))","(()())","(())()","()(())","()()()"]
+// Concepts:
+// recursion
+// backtracking
+// constraints checking
+
+// 2. Subsets / Power Set
+// Input:
+// [1,2,3]
+// Output:
+// [],
+// [1],
+// [2],
+// [3],
+// [1,2],
+// [1,3],
+// [2,3],
+// [1,2,3]
+
+// Very famous interview question.
+
+// 3. Permutations
+// Input:
+// [1,2,3]
+// Output:
+// [1,2,3]
+// [1,3,2]
+// [2,1,3]
+// ...
+
+// 4. Combination Sum
+// Given numbers and target:
+// [2,3,6,7], target = 7
+// Output:
+// [[2,2,3],[7]]
+// Very common in coding rounds.

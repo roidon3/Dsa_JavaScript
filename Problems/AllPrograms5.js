@@ -71,3 +71,26 @@ function maxSubArray(arr) {
 //  Find first repeating character (e.g., "success" → "c")
 //   Inline 5 divs in a row without flex/margin/padding (Hint: display: inline-block)
 //cenrer a div
+
+
+//to generate all combinations remove  if (current[current.length - 1] !== "1") { cond keep only   backtrack(current + "1");
+function generateBinary(n) {
+  const result = [];
+  function backtrack(current) {
+    // Step 1: If length becomes n, store it
+    if (current.length === n) {
+      result.push(current);
+      return;
+    }
+    // Step 2: Add "0"
+    backtrack(current + "0");
+    // Step 3: Add "1" only if previous char is not "1"
+    if (current[current.length - 1] !== "1") {
+      backtrack(current + "1");
+    }
+  }
+  backtrack("");
+  return result;
+}
+
+console.log(generateBinary(3));

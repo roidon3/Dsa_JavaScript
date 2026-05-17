@@ -88,7 +88,7 @@ function buySellStocks(arr){
             leastNo=arr[i]
         }
         else{
-            maxNo=Math.max(maxNo,leastNo-arr[i])
+            maxNo=Math.max(maxNo,arr[i]-leastNo)
         }
 
     }
