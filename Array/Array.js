@@ -1,6 +1,5 @@
 const array = new Array(1,3,5,7,9);
 const array1 =[2,4,6,8,10]
-const arr5=[12,67]
 
 // let arr= array.length
 // let arr = array.concat(array1)
