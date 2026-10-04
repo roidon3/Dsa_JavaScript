@@ -1,3 +1,5 @@
+//stack question No :1
+//here we wrote !top beacuse if the str starts with closing braces then its !undefined thats true so 
 function valid(str) {
     let stack = [];
     for (let i = 0; i < str.length; i++) {
@@ -31,7 +33,6 @@ function validOptimized(str) {
     for (let i = 0; i < str.length; i++) {
         if (map[str[i]]) {
             stack.push(str[i])
-
         }
         else {
             let top = stack.pop();
@@ -41,7 +42,6 @@ function validOptimized(str) {
         }
     }
         return stack.length === 0
-
 }
 
 console.log(validOptimized("[[]]"));

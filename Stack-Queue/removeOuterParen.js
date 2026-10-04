@@ -1,3 +1,4 @@
+//stack question No :2
 function outerParenthesis(str) {
     let stack = [];
     let ans = ""
@@ -20,19 +21,6 @@ function outerParenthesis(str) {
 }
 console.log(outerParenthesis("(()())(())(()()(()))"));
 
-
-// function roidonsGeniusSolution(str){
-//     let ans="";
-//     for(let i=0;i<str.length;i++){
-//         if(str[i]=="("&&str[i+1]===")"){
-//             ans=ans+str[i]
-//         }
-
-//     }
-//     return ans
-
-// }
-// console.log(roidonsGeniusSolution("(()())(())(()()(()))"));
 
 function removeP(str){
     let depth=0;
