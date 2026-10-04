@@ -1,3 +1,4 @@
+//stack question No :6
 function nextGreaterElement2(nums) {
     let n = nums.length;
     let stack = [];

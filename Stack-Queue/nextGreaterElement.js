@@ -1,3 +1,4 @@
+//stack question No :5
 //normal method
 // function nextGreaterElement(){
     // const arr=[3,4,5]

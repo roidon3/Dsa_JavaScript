@@ -1,3 +1,4 @@
+//stack question No :4
 // //when ever you see a problem next graeter .next smaller, warm,next profit always use stack
 function dailyTemp() {
     let arr = [67, 68, 67, 70, 66]

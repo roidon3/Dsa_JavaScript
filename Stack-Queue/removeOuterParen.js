@@ -3,8 +3,6 @@ function outerParenthesis(str) {
     let stack = [];
     let ans = ""
     for (let i = 0; i < str.length; i++) {
-
-
         if (str[i] === "(") {
             stack.push(str[i])
             if (stack.length > 1) {
@@ -22,16 +20,16 @@ function outerParenthesis(str) {
 console.log(outerParenthesis("(()())(())(()()(()))"));
 
 
-function removeP(str){
-    let depth=0;
-    let ans=""
-    for(let i=0;i<str.length;i++){
-        if(str[i]=="("){
+function removeP(str) {
+    let depth = 0;
+    let ans = ""
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] == "(") {
             depth++
-            depth >1 ?ans=ans+str[i]:""
-            
-        }else{
-                 depth >1 ?ans=ans+str[i]:""
+            depth > 1 ? ans = ans + str[i] : ""
+
+        } else {
+            depth > 1 ? ans = ans + str[i] : ""
             depth--
         }
 
